@@ -175,6 +175,7 @@
     <ClCompile Include="..\src\Ocean.cpp" />
     <ClCompile Include="..\src\Plane.cpp" />
     <ClCompile Include="..\src\PlayScene.cpp" />
+    <ClCompile Include="..\src\RollButton.cpp" />
     <ClCompile Include="..\src\Scene.cpp" />
     <ClCompile Include="..\src\SoundManager.cpp" />
     <ClCompile Include="..\src\StartButton.cpp" />
@@ -206,6 +207,7 @@
     <ClInclude Include="..\src\Ocean.h" />
     <ClInclude Include="..\src\Plane.h" />
     <ClInclude Include="..\src\PlayScene.h" />
+    <ClInclude Include="..\src\RollButton.h" />
     <ClInclude Include="..\src\Scene.h" />
     <ClInclude Include="..\src\SceneState.h" />
     <ClInclude Include="..\src\ShapeType.h" />

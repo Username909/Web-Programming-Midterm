@@ -3,6 +3,8 @@
 #define __LEVEL_1_SCENE__
 
 #include "Scene.h"
+#include "RollButton.h"
+#include "Label.h"
 
 class Level1Scene : public Scene
 {
@@ -21,7 +23,9 @@ public:
 
 private:
 	// game objects
-
+	RollButton* m_pRollButton;
+	Label* m_pDiceLabel1;
+	Label* m_pDiceLabel2;
 
 
 	// private data member

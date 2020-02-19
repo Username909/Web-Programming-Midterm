@@ -105,6 +105,9 @@ void StartScene::start()
 	m_pStartButton = new StartButton();
 	m_pStartButton->setPosition(glm::vec2(Config::SCREEN_WIDTH * 0.5f, Config::SCREEN_HEIGHT * 0.5f));
 	addChild(m_pStartButton);
+
+	int temp = int (Util::RandomRange(1.0f, 6.0f));
+	std::cout << std::to_string(temp) << std::endl;
 }
 
 glm::vec2 StartScene::getMousePosition()
