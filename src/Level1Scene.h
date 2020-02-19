@@ -6,6 +6,7 @@
 #include "RollButton.h"
 #include "Label.h"
 #include "Ocean.h"
+#include "Island.h"
 
 class Level1Scene : public Scene
 {
@@ -26,6 +27,8 @@ private:
 	// game objects
 	RollButton* m_pRollButton;
 	Ocean* m_pBackground;
+	Island* m_pDice1;
+	Island* m_pDice2;
 	Label* m_pDiceLabel1;
 	Label* m_pDiceLabel2;
 

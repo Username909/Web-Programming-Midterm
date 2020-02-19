@@ -13,10 +13,12 @@ Level1Scene::~Level1Scene()
 
 void Level1Scene::draw()
 {
-	//m_pBackground->draw();
+	m_pBackground->draw();
 	m_pRollButton->draw();
 	m_pDiceLabel1->draw();
 	m_pDiceLabel2->draw();
+	m_pDice1->draw();
+	m_pDice2->draw();
 }
 
 void Level1Scene::update()
@@ -132,7 +134,7 @@ void Level1Scene::start()
 	m_pDiceLabel1->setParent(this);
 	addChild(m_pDiceLabel1);
 	
-	m_pDiceLabel2 = new Label("2", "Consolas", 40, black,
+	m_pDiceLabel2 = new Label("1", "Consolas", 40, black,
 		glm::vec2(Config::SCREEN_WIDTH * 0.8f, 300.0f));
 	m_pDiceLabel2->setParent(this);
 	addChild(m_pDiceLabel2);
@@ -141,9 +143,17 @@ void Level1Scene::start()
 	m_pRollButton->setPosition(glm::vec2(Config::SCREEN_WIDTH * 0.5f, Config::SCREEN_HEIGHT * 0.7f));
 	addChild(m_pRollButton);
 
-	//m_pBackground = new Ocean();
-	//m_pBackground->setPosition(glm::vec2(Config::SCREEN_WIDTH * 0.5f, Config::SCREEN_HEIGHT * 0.5f));
-	//addChild(m_pBackground);
+	m_pBackground = new Ocean();
+	m_pBackground->setPosition(glm::vec2(Config::SCREEN_WIDTH * 0.5f, Config::SCREEN_HEIGHT * 0.5f));
+	addChild(m_pBackground);
+
+	m_pDice1 = new Island();
+	m_pDice1->setPosition(glm::vec2(Config::SCREEN_WIDTH * 0.2f, 100.0f));
+	addChild(m_pDice1);
+
+	m_pDice2 = new Island();
+	m_pDice2->setPosition(glm::vec2(Config::SCREEN_WIDTH * 0.8f, 100.0f));
+	addChild(m_pDice2);
 }
 
 glm::vec2 Level1Scene::getMousePosition()

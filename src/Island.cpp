@@ -3,7 +3,7 @@
 
 Island::Island()
 {
-	TheTextureManager::Instance()->load("../Assets/textures/island.png",
+	TheTextureManager::Instance()->load("../Assets/textures/1.png",
 		"island", TheGame::Instance()->getRenderer());
 
 	// measure size by querying the texture
