@@ -8,8 +8,9 @@ RollButton::RollButton()
 		"../Assets/textures/RollButton.png",
 		"rollButton",
 		ROLL_BUTTON, glm::vec2(400.0f, 250.0f)), m_isClicked(false)
-{
 
+{
+	TheSoundManager::Instance()->load("../Assets/audio/yay.ogg", "yay", SOUND_SFX);
 }
 RollButton::~RollButton()
 {
@@ -26,7 +27,7 @@ bool RollButton::ButtonClick()
 			int dice2 = Util::RandomRange(1, 6);
 			std::cout << dice1 << std::endl;
 			std::cout << dice2 << std::endl;
-			TheSoundManager::Instance()->load("../Assets/audio/yay.ogg", "yay", SOUND_SFX);
+			TheSoundManager::Instance()->playSound("yay",0);
 			m_isClicked = true;
 		}
 		return true;
