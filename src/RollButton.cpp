@@ -22,9 +22,11 @@ bool RollButton::ButtonClick()
 	{
 		if (!m_isClicked)
 		{
-
+		
 			int dice1 = Util::RandomRange(1, 6);
 			int dice2 = Util::RandomRange(1, 6);
+			x = dice1;
+			y = dice2;
 			std::cout << dice1 << std::endl;
 			std::cout << dice2 << std::endl;
 			TheSoundManager::Instance()->playSound("yay",0);

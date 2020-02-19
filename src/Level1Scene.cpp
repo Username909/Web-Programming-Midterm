@@ -1,6 +1,8 @@
 #include "Level1Scene.h"
+#include "RollButton.h"
 #include "Game.h"
 #include <iostream>
+#include<string>  
 
 Level1Scene::Level1Scene()
 {
@@ -13,6 +15,7 @@ Level1Scene::~Level1Scene()
 
 void Level1Scene::draw()
 {
+	// draws the images
 	m_pBackground->draw();
 	m_pRollButton->draw();
 	m_pDiceLabel1->draw();
@@ -26,6 +29,8 @@ void Level1Scene::update()
 	m_pRollButton->setMousePosition(m_mousePosition);
 	m_pRollButton->ButtonClick();
 
+	m_pDiceLabel1->setText((std::to_string(m_pRollButton->x)));
+	m_pDiceLabel2->setText((std::to_string(m_pRollButton->y)));
 }
 
 void Level1Scene::clean()
@@ -127,7 +132,6 @@ void Level1Scene::handleEvents()
 
 void Level1Scene::start()
 {
-	
 	SDL_Color black = { 0, 0, 0, 255 };
 	m_pDiceLabel1 = new Label("1", "Consolas", 40, black,
 		glm::vec2(Config::SCREEN_WIDTH * 0.2f, 300.0f));
