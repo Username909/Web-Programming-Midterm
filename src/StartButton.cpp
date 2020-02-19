@@ -1,5 +1,6 @@
 #include "StartButton.h"
 #include "Game.h"
+#include "Util.h"
 
 StartButton::StartButton()
 	// call super constructor
@@ -21,6 +22,12 @@ bool StartButton::ButtonClick()
 	{
 		if(!m_isClicked)
 		{
+
+			int dice1 = Util::RandomRange(1, 6);
+			int dice2 = Util::RandomRange(1, 6);
+			std::cout << dice1 << std::endl;
+			std::cout << dice2 << std::endl;
+			
 			Game::Instance()->changeSceneState(LEVEL1_SCENE);
 			m_isClicked = true;
 		}

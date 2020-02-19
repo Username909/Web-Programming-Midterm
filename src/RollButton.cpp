@@ -1,4 +1,5 @@
 #include "RollButton.h"
+#include "Util.h"
 #include "Game.h"
 
 RollButton::RollButton()
@@ -20,10 +21,12 @@ bool RollButton::ButtonClick()
 	{
 		if (!m_isClicked)
 		{
-			int dice1 = 0;
-			int dice2 = 0;
 
-			
+			int dice1 = Util::RandomRange(1, 6);
+			int dice2 = Util::RandomRange(1, 6);
+			std::cout << dice1 << std::endl;
+			std::cout << dice2 << std::endl;
+			TheSoundManager::Instance()->load("../Assets/audio/yay.ogg", "yay", SOUND_SFX);
 			m_isClicked = true;
 		}
 		return true;

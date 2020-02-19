@@ -13,7 +13,7 @@ Level1Scene::~Level1Scene()
 
 void Level1Scene::draw()
 {
-	m_pBackground->draw();
+	//m_pBackground->draw();
 	m_pRollButton->draw();
 	m_pDiceLabel1->draw();
 	m_pDiceLabel2->draw();
@@ -21,7 +21,8 @@ void Level1Scene::draw()
 
 void Level1Scene::update()
 {
-
+	m_pRollButton->setMousePosition(m_mousePosition);
+	m_pRollButton->ButtonClick();
 
 }
 
@@ -47,19 +48,19 @@ void Level1Scene::handleEvents()
 			break;
 
 		case SDL_MOUSEBUTTONDOWN:
-			switch(event.button.button)
+			switch (event.button.button)
 			{
 			case SDL_BUTTON_LEFT:
-				
+				m_pRollButton->setMouseButtonClicked(true);
 				break;
 			}
-		
+
 			break;
 		case SDL_MOUSEBUTTONUP:
 			switch (event.button.button)
 			{
 			case SDL_BUTTON_LEFT:
-				
+				m_pRollButton->setMouseButtonClicked(false);
 				break;
 			}
 			break;
@@ -140,9 +141,9 @@ void Level1Scene::start()
 	m_pRollButton->setPosition(glm::vec2(Config::SCREEN_WIDTH * 0.5f, Config::SCREEN_HEIGHT * 0.7f));
 	addChild(m_pRollButton);
 
-	m_pBackground = new Ocean();
-	m_pBackground->setPosition(glm::vec2(Config::SCREEN_WIDTH * 0.5f, Config::SCREEN_HEIGHT * 0.5f));
-	addChild(m_pBackground);
+	//m_pBackground = new Ocean();
+	//m_pBackground->setPosition(glm::vec2(Config::SCREEN_WIDTH * 0.5f, Config::SCREEN_HEIGHT * 0.5f));
+	//addChild(m_pBackground);
 }
 
 glm::vec2 Level1Scene::getMousePosition()
