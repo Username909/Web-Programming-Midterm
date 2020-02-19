@@ -20,7 +20,10 @@ bool RollButton::ButtonClick()
 	{
 		if (!m_isClicked)
 		{
-			Game::Instance()->changeSceneState(LEVEL1_SCENE);
+			int dice1 = 0;
+			int dice2 = 0;
+
+			
 			m_isClicked = true;
 		}
 		return true;

@@ -3,7 +3,7 @@
 
 Ocean::Ocean()
 {
-	TheTextureManager::Instance()->load("../Assets/textures/ocean.gif",
+	TheTextureManager::Instance()->load("../Assets/textures/background.png",
 		"ocean", TheGame::Instance()->getRenderer());
 
 	// measure size by querying the texture
@@ -11,7 +11,7 @@ Ocean::Ocean()
 	setWidth(size.x);
 	setHeight(size.y);
 
-	setPosition(glm::vec2(0.0f, -960.0f));
+	setPosition(glm::vec2(0.5f, 0.0f));
 	setIsColliding(false);
 	setType(OCEAN);
 	setVelocity(glm::vec2(0.0f, 5.0f));
